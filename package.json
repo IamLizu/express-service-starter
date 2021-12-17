@@ -1,0 +1,59 @@
+{
+  "name": "express-service-starter",
+  "version": "1.0.0",
+  "description": "Just another boilerplate...",
+  "main": "src/index.ts",
+  "repository": "https://github.com/IamLizu/express-service-starter.git",
+  "author": "IamLizu <thegeek@iamlizu.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "npx tsc",
+    "start": "npx tsc && node build/index.js",
+    "start:dev": "nodemon src/index.ts",
+    "test": "cross-env NODE_ENV=testing jest --coverage",
+    "test:router": "cross-env NODE_ENV=testing jest -t router",
+    "test:controller": "cross-env NODE_ENV=testing jest -t controller"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-typescript": "^7.16.5",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.0.3",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^17.0.0",
+    "babel-jest": "^27.4.5",
+    "cross-env": "^7.0.3",
+    "jest": "^27.4.5",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "node_modules",
+      "yarn.lock",
+      "package-lock.json",
+      "build/*.js",
+      "*.log"
+    ]
+  },
+  "jest": {
+    "verbose": true,
+    "forceExit": true,
+    "detectOpenHandles": true,
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/build/"
+    ]
+  }
+}
